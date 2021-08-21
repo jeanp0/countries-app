@@ -1,0 +1,24 @@
+<h2>Por país</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <app-country-input
+      (enter)="search($event)"
+      (debounce)="suggestions($event)"
+      placeholder="Buscar por país..."
+    ></app-country-input>
+  </div>
+</div>
+
+<hr />
+
+<div *ngIf="hasError" class="alert alert-danger">
+  No se encontró con el índice de búsqueda {{ query }}
+</div>
+
+<div *ngIf="!hasError" class="row">
+  <div class="col">
+    <app-country-table [countries]="countries"></app-country-table>
+  </div>
+</div>

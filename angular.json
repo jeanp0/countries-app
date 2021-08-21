@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "45448807-2e40-495b-82b3-9aa82feb3ba0",
+    "defaultCollection": "@angular-eslint/schematics"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -97,6 +101,15 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }

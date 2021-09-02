@@ -1,4 +1,10 @@
-<table class="table table-hover" *ngIf="countries.length > 0">
+<table
+  class="
+    table table-hover
+    animate__animated animate__fadeInUp animate__animated animate__faster
+  "
+  *ngIf="countries.length > 0"
+>
   <thead>
     <tr>
       <th>#</th>
@@ -19,7 +25,12 @@
       <td>{{ country.capital }}, {{ country.name }}</td>
       <td>{{ country.population | number }}</td>
       <td>
-        <a [routerLink]="['/pais', country.alpha2Code]">Ver...</a>
+        <button
+          class="btn btn-outline-primary"
+          [routerLink]="['/pais', country.alpha2Code]"
+        >
+          🔍
+        </button>
       </td>
     </tr>
   </tbody>
